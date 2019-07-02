@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#polybars
+killall -q polybar
+while pgrep -u SUID -x polybar >/dev/null; do sleep l; done
+polybar example -r &
+
+#exec on pc startup
+exec xrdb ~/.Xresources
